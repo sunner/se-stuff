@@ -32,7 +32,7 @@
 
 # $Id: Makefile,v 1.18 2006-06-19 10:58:11 mairas Exp $
 
-LATEX	= latex
+LATEX	= pdflatex
 BIBTEX	= bibtex
 MAKEINDEX = makeindex
 XDVI	= xdvi -gamma 4
@@ -100,7 +100,7 @@ define manconf
 	mandeps=`if test -r $(basename $@).cnf ; then cat $(basename $@).cnf |tr -d '\n\r' ; fi`
 endef
 
-all 	: $(TRG)
+all 	: $(PDF)
 
 .PHONY	: all show clean ps pdf showps veryclean
 
@@ -127,11 +127,11 @@ $(TRG)	: %.dvi : %.tex
 $(PSF)	: %.ps : %.dvi
 	  @$(DVIPS) $< -o $@
 
-$(PDF)  : %.pdf : %.dvi
-	  @$(DVIPDF) -o $@ $<
+#$(PDF)  : %.pdf : %.dvi
+#	  @$(DVIPDF) -o $@ $<
 # To use pdflatex, comment the two lines above and uncomment the lines below
-#$(PDF) : %.pdf : %.tex
-#	@$(run-pdflatex)
+$(PDF) : %.pdf : %.tex
+	  @$(run-pdflatex)
 
 
 show	: $(TRG)
