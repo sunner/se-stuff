@@ -119,7 +119,7 @@
 
 \section{好的软件}
 
-\subsection[什么是好的软件]{什么样的软件是好的软件？}
+\subsection{什么样的软件是好软件？}
 
 \newenvironment{iconblock}[2]{
     \begin{block}{#1}
@@ -145,49 +145,94 @@
 
 \end{frame}
 
-\begin{frame}{Make Titles Informative.}
+\subsection{好软件的特质}
 
-  You can create overlays\dots
+\begin{frame}{用户如何评价软件}
   \begin{itemize}
-  \item using the \texttt{pause} command:
-    \begin{itemize}
-    \item
-      First item.
-      \pause
-    \item    
-      Second item.
-    \end{itemize}
-  \item
-    using overlay specifications:
-    \begin{itemize}
-    \item<3->
-      First item.
-    \item<4->
-      Second item.
-    \end{itemize}
-  \item
-    using the general \texttt{uncover} command:
-    \begin{itemize}
-      \uncover<5->{\item
-        First item.}
-      \uncover<6->{\item
-        Second item.}
-    \end{itemize}
+    \item 是否能完成我想要的工作？结果正确吗？\structure{[正确性]}
+    \pause
+    \item<2-> 学起来容易吗？用起来方便吗？\structure{[易用性]}
+    \pause
+    \item<3-> 速度快不快？吃内存吗？\structure{[性能]}
+    \pause
+    \item<4-> 黑客能侵入它吗？后门有木有？\structure{[安全性]}
+    \pause
+    \item<5-> 经常死机吗？\structure{[稳定性]}
+    \pause
+    \item<6-> 点卡贵不贵？装备怎么卖？\structure{[成本]}
   \end{itemize}
 \end{frame}
 
-
-\subsection{Second Subsection}
-
-\begin{frame}{Make Titles Informative.}
+\begin{frame}{内行如何评价软件}
+  \begin{block}{}
+    内行也关注用户所关注的，但还有更多\dots
+  \end{block}
+  \begin{columns}[t]
+    \begin{column}{6.1cm}
+      \begin{itemize}
+        \item 容易修改和扩充吗？\structure{[扩展性]}
+          \begin{itemize}
+            \item 用户需求总是变更
+            \item 竞争对手给的压力山大
+          \end{itemize}
+        \pause
+        \item<2-> 代码其它软件能用吗？\structure{[复用性]}
+          \begin{itemize}
+            \item 降低成本
+            \item 代码更可靠
+          \end{itemize}
+        \pause
+        \item<3-> 做了充分测试吗？\structure{[可测性]}
+        \pause
+      \end{itemize}
+    \end{column}
+    \begin{column}{6.1cm}
+      \begin{itemize}
+        \item<4-> 新人能快速融入吗？\structure{[可维护]}
+          \begin{itemize}
+            \item 开发人员流动快
+            \item 小白经验不足
+          \end{itemize}
+        \pause
+        \item<5-> 能在多平台使用吗？\structure{[可移植性]}
+          \begin{itemize}
+            \pause
+            \item Windows, Linux, Mac\dots
+            \pause
+            \item IE, Firefox, Chrome\dots
+            \pause
+            \item PC, iPhone, iPad, Android, PSP\dots
+          \end{itemize}
+        \pause
+        \item<9-> \dots
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Make Titles Informative.}
+\begin{frame}{好软件的特质}
+  \begin{block}{}
+    \begin{center}
+      \LARGE 用户和内行都说好，才是真的好
+    \end{center}
+  \end{block}
+  \pause
+  \begin{block}{}
+    \begin{center}
+      用户和内行矛盾了怎么办？
+    \end{center}
+  \end{block}
 \end{frame}
 
+\begin{frame}{应对矛盾}
+  \begin{alertblock}{}
+    \begin{center}
+      \Huge 折中！
+    \end{center}
+  \end{alertblock}
+\end{frame}
 
-
-\section*{Summary}
+\section{软工核心思想}
 
 \begin{frame}{Summary}
 
