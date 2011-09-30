@@ -69,14 +69,6 @@ PDF	= $(SRC:%.tex=%.pdf)
 
 define run-latex
 	$(COPY);$(LATEX) $<
-	egrep $(MAKEIDX) $< && ($(MAKEINDEX) $(<:%.tex=%);$(COPY);$(LATEX) $<) >/dev/null; true
-	egrep -c $(RERUNBIB) $(<:%.tex=%.log) && ($(BIBTEX) $(<:%.tex=%);$(COPY);$(LATEX) $<) ; true
-	egrep $(RERUN) $(<:%.tex=%.log) && ($(COPY);$(LATEX) $<) >/dev/null; true
-	egrep $(RERUN) $(<:%.tex=%.log) && ($(COPY);$(LATEX) $<) >/dev/null; true
-	if cmp -s $(<:%.tex=%.toc) $(<:%.tex=%.toc.bak); then true ;else $(LATEX) $< ; fi
-	$(RM) $(<:%.tex=%.toc.bak)
-	# Display relevant warnings
-	egrep -i "(Reference|Citation).*undefined" $(<:%.tex=%.log) ; true
 endef
 
 define run-pdflatex
