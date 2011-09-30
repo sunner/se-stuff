@@ -1,6 +1,6 @@
 % $Header: /Users/joseph/Library/texmf/tex/latex/beamer/solutions/generic-talks/generic-ornate-15min-45min.en.tex,v 90e850259b8b 2007/01/28 20:48:30 tantau $
 
-\documentclass[CJK,notheorems]{beamer}
+\documentclass[CJK]{beamer}
 
 % This file is a solution template for:
 
@@ -48,7 +48,7 @@
 \subtitle
 {软件工程导论之五} % (optional)
 
-\author[sun@hit.edu.cn] % (optional, use only with lots of authors)
+\author[\url{http://sunner.cn}] % (optional, use only with lots of authors)
 {王宇颖 \and 孙志岗}
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
@@ -82,7 +82,7 @@
 % the beginning of each subsection:
 \AtBeginSubsection[]
 {
-  \begin{frame}<beamer>{Outline}
+  \begin{frame}<beamer>{主要内容}
     \tableofcontents[currentsection,currentsubsection]
   \end{frame}
 }
@@ -101,7 +101,7 @@
   \titlepage
 \end{frame}
 
-\begin{frame}{Outline}
+\begin{frame}{主要内容}
   \tableofcontents
   % You might wish to add the option [pausesections]
 \end{frame}
@@ -117,20 +117,32 @@
 % - Talk about 30s to 2min per frame. So there should be between about
 %   15 and 30 frames, all told.
 
-\section{简介}
+\section{好的软件}
 
-\subsection[Short First Subsection Name]{First Subsection Name}
+\subsection[什么是好的软件]{什么样的软件是好的软件？}
 
-\begin{frame}{Make Titles Informative. Use Uppercase Letters.}{Subtitles are optional.}
+\newenvironment{iconblock}[2]{
+    \begin{block}{#1}
+    \begin{center}
+    \includegraphics[height=2.4cm]{#2}}
+{\end{center}
+    \end{block}
+}
+
+\begin{frame}{下面哪个软件好？为什么？}
   % - A title should summarize the slide in an understandable fashion
   %   for anyone how does not follow everything on the slide itself.
+  \begin{columns}[T]
+    \begin{column}{4cm}
+      \begin{iconblock}{腾讯QQ}{qq.jpg}\end{iconblock}
+      \begin{iconblock}{植物大战僵尸}{pvz.jpg}\end{iconblock}
+    \end{column}
+    \begin{column}{4cm}
+      \begin{iconblock}{Internet Explorer}{ie.png}\end{iconblock}
+      \begin{iconblock}{Microsoft Word}{word.png}\end{iconblock}
+    \end{column}
+  \end{columns}
 
-  \begin{itemize}
-  \item
-    Use \texttt{itemize} a lot.
-  \item
-    Use very short sentences or short phrases.
-  \end{itemize}
 \end{frame}
 
 \begin{frame}{Make Titles Informative.}
