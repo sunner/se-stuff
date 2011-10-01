@@ -1,6 +1,6 @@
 % $Header: /Users/joseph/Library/texmf/tex/latex/beamer/solutions/generic-talks/generic-ornate-15min-45min.en.tex,v 90e850259b8b 2007/01/28 20:48:30 tantau $
 
-\documentclass[CJK]{beamer}
+\documentclass[]{beamer}
 
 % This file is a solution template for:
 
@@ -41,6 +41,7 @@
 \XeTeXlinebreakskip = 0pt plus 1pt
 
 \usepackage{times}
+\usepackage{ulem}
 % Or whatever. Note that the encoding and the font should match. If T1
 % does not look nice, try deleting the line with the fontenc.
 
@@ -131,9 +132,7 @@
     \end{block}
 }
 
-\begin{frame}{下面哪个软件好？为什么？}
-  % - A title should summarize the slide in an understandable fashion
-  %   for anyone how does not follow everything on the slide itself.
+\begin{frame}{下面哪个软件好？}
   \begin{columns}[T]
     \begin{column}{4cm}
       \begin{iconblock}{腾讯QQ}{qq.jpg}\end{iconblock}
@@ -150,19 +149,19 @@
 \subsection{好软件的特质}
 
 \begin{frame}{用户如何评价软件}
-  \begin{itemize}
-    \item 是否能完成我想要的工作？结果正确吗？\structure{[正确性]}
-    \pause
-    \item 学起来容易吗？用起来方便吗？\structure{[易用性]}
-    \pause
-    \item 速度快不快？吃内存吗？\structure{[性能]}
-    \pause
-    \item 黑客能侵入它吗？后门有木有？\structure{[安全性]}
-    \pause
-    \item 经常死机吗？\structure{[稳定性]}
-    \pause
-    \item 点卡贵不贵？装备怎么卖？\structure{[成本]}
-  \end{itemize}
+  \begin{description}[正确性]
+    \item[正确性] 是否能完成我想要做的事？结果正确吗？
+      \pause
+    \item[易用性] 学起来容易吗？用起来方便吗？
+      \pause
+    \item[性能] 速度快不快？吃内存吗？
+      \pause
+    \item[安全性] 黑客能侵入它吗？后门有木有？
+      \pause
+    \item[稳定性] 经常死机吗？
+      \pause
+    \item[成本] 点卡贵不贵？装备怎么卖？
+  \end{description}
 \end{frame}
 
 \begin{frame}{内行如何评价软件}
@@ -207,13 +206,19 @@
             \item PC, iPhone, iPad, Android, PSP\dots
           \end{itemize}
         \pause
-        \item<10-> \dots
+        \item \dots
       \end{itemize}
     \end{column}
   \end{columns}
 \end{frame}
 
 \begin{frame}{好软件的特质}
+  \begin{block}{目标}
+    \begin{center}
+      \Huge 造好的软件！
+    \end{center}
+  \end{block}
+  \pause
   \begin{block}{}
     \begin{center}
       \LARGE 用户和内行都说好，才是真的好
@@ -222,25 +227,43 @@
   \pause
   \begin{block}{}
     \begin{center}
-      用户和内行矛盾了怎么办？
-
-      特质之间矛盾了怎么办？
+      \LARGE \alert{矛盾}了怎么办？
     \end{center}
   \end{block}
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{矛盾}
+  \begin{block}{用户和内行的矛盾}
+    \begin{center}
+      \includegraphics[height=5cm]{cms_navbar.png}
+    \end{center}
+  \end{block}
+\end{frame}
+
+\begin{frame}{矛盾}
+  \begin{block}{特质之间的矛盾}
+    \begin{columns}
+      \begin{column}{4cm}
+        \begin{itemize}
+          \item 安全性 vs. 性能
+          \item 安全性 vs. 易用性
+          \item 可维护 vs. 性能
+          \item 可测性 vs. 成本
+        \end{itemize}
+      \end{column}
+      \begin{column}{6cm}
+        \includegraphics[height=5cm]{contradiction.jpg}
+      \end{column}
+    \end{columns}
+  \end{block}
+\end{frame}
+
+\begin{frame}{造好的软件}
   \begin{alertblock}{应对矛盾}
     \begin{center}
       \Huge 折中！
     \end{center}
   \end{alertblock}
-  \pause
-  \begin{block}{目标}
-    \begin{center}
-      \Huge 造好的软件！
-    \end{center}
-  \end{block}
   \pause
   \begin{block}{手段}
     \begin{center}
@@ -259,15 +282,44 @@
       \Huge 向传统工业致敬
     \end{center}
   \end{block}
-  \pause
+  \begin{center}
+    \includegraphics[height=3cm]{spacecraft.jpg}
+    \includegraphics[height=3cm]{cctv.jpg}
+    \includegraphics[height=3cm]{prime_trunk.jpg}
+
+    并让传统工业变成\dots
+  \end{center}
+\end{frame}
+
+\begin{frame}{智能化传统工业}
+  \begin{center}
+    \includegraphics[height=6.5cm]{prime_robot.jpg}
+  \end{center}
+\end{frame}
+
+\begin{frame}{核心思想之核心}
+  \begin{block}{核心思想的核心的核心}
+    \begin{center}
+      \alt<1,2>{向传统工业致敬}{向传统工业\alert{\sout{致敬}}挑战}
+    \end{center}
+  \end{block}
   \begin{block}{核心思想的核心}
-    \begin{itemize}
-      \item 信息隐藏
-      \pause
-      \item 代码复用
-      \pause
-      \item 适应变化
-    \end{itemize}
+    \begin{columns}
+      \begin{column}{3cm}
+        \begin{itemize}
+          \item 信息隐藏
+            \pause
+          \item 代码复用
+            \pause
+          \item 适应变化
+        \end{itemize}
+      \end{column}
+      \begin{column}{6cm}
+        \includegraphics<1>[height=5cm]{car_in_parts.jpg}
+        \includegraphics<2>[height=5cm]{screw.jpg}
+        \includegraphics<3>[trim=2cm 0cm 0cm 0cm, height=5cm]{chaina.jpg}
+      \end{column}
+    \end{columns}
   \end{block}
 \end{frame}
 
@@ -281,11 +333,19 @@
   \end{block}
   \pause
   \begin{block}{管理思想}
-    \begin{itemize}
-      \item \alert{规格严格}式管理 \structure{[工厂式开发]}
-      \pause
-      \item \alert{功夫到家}式管理 \structure{[敏捷式开发]}
-    \end{itemize}
+    \begin{columns}
+      \begin{column}{6cm}
+        \begin{itemize}
+          \item \alert{规格严格}式管理 \--- \structure{[工厂模式]}
+            \pause
+          \item \alert{功夫到家}式管理 \--- \structure{[敏捷模式]}
+        \end{itemize}
+      \end{column}
+      \begin{column}{4cm}
+        \includegraphics<1,2>[height=3cm]{factory.jpg}
+        \includegraphics<3>[height=3cm]{james_bond.jpg}
+      \end{column}
+    \end{columns}
   \end{block}
 \end{frame}
 
