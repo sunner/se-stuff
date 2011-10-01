@@ -1,50 +1,4 @@
-% $Header: /Users/joseph/Library/texmf/tex/latex/beamer/solutions/generic-talks/generic-ornate-15min-45min.en.tex,v 90e850259b8b 2007/01/28 20:48:30 tantau $
-
-\documentclass[]{beamer}
-
-% This file is a solution template for:
-
-% - Giving a talk on some subject.
-% - The talk is between 15min and 45min long.
-% - Style is ornate.
-
-
-
-% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
-%
-% In principle, this file can be redistributed and/or modified under
-% the terms of the GNU Public License, version 2.
-%
-% However, this file is supposed to be a template to be modified
-% for your own needs. For this reason, if you use this file as a
-% template and not specifically distribute it as part of a another
-% package/program, I grant the extra permission to freely copy and
-% modify this file as you see fit and even to delete this copyright
-% notice. 
-
-
-\mode<presentation>
-{
-  \usetheme{Warsaw}
-  % or ...
-
-  \setbeamercovered{transparent}
-  % or whatever (possibly just delete it)
-}
-
-\usepackage[cm-default]{fontspec}
-\usepackage{xunicode}
-\usepackage{xeCJK}
-\setCJKmainfont{AR PL UKai CN}
-
-\XeTeXlinebreaklocale "zh"
-\XeTeXlinebreakskip = 0pt plus 1pt
-
-\usepackage{times}
-\usepackage{ulem}
-% Or whatever. Note that the encoding and the font should match. If T1
-% does not look nice, try deleting the line with the fontenc.
-
+\input{style.tex}
 
 \title[Thinking in SE]
 {软件工程思想}
@@ -123,6 +77,31 @@
 \section{好的软件}
 
 \subsection[什么是好软件]{什么样的软件是好软件？}
+
+\begin{frame}[fragile]
+\frametitle{An Algorithm For Finding Primes Numbers.}
+\begin{semiverbatim}
+\uncover<1->{\alert<0>{int main (void)}}
+\uncover<1->{\alert<0>{\{}}
+\uncover<1->{\alert<1>{ \alert<4>{std::}vector<bool> is_prime (100, true);}}
+\uncover<1->{\alert<1>{ for (int i = 2; i < 100; i++)}}
+\uncover<2->{\alert<2>{
+if (is_prime[i])}}
+\uncover<2->{\alert<0>{
+\{}}
+\uncover<3->{\alert<3>{
+\alert<4>{std::}cout << i << " ";}}
+\uncover<3->{\alert<3>{
+for (int j = i; j < 100;}}
+\uncover<3->{\alert<3>{
+is_prime [j] = false, j+=i);}}
+\uncover<2->{\alert<0>{
+\}}}
+\uncover<1->{\alert<0>{ return 0;}}
+\uncover<1->{\alert<0>{\}}}
+\end{semiverbatim}
+\visible<4->{Note the use of \alert{\texttt{std::}}.}
+\end{frame}
 
 \newenvironment{iconblock}[2]{
     \begin{block}{#1}
@@ -441,6 +420,22 @@
     \end{column}
   \end{columns}
 \end{frame}
+
+\subsubsection{面向构件}
+
+\begin{frame}[fragile]
+  \frametitle{面向构件}
+  \begin{itemize}
+    \item 软件间的高层协作
+    \item 媒介是通行的接口规范
+    \item 无需深入了解彼此
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{面向构件}
+  \begin{center}
+    \includegraphics[height=8cm]{qqbrowser.jpg}
+  \end{center}
+\end{frame}
+
 \end{document}
-
-
