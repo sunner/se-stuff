@@ -78,31 +78,6 @@
 
 \subsection[什么是好软件]{什么样的软件是好软件？}
 
-\begin{frame}[fragile]
-\frametitle{An Algorithm For Finding Primes Numbers.}
-\begin{semiverbatim}
-\uncover<1->{\alert<0>{int main (void)}}
-\uncover<1->{\alert<0>{\{}}
-\uncover<1->{\alert<1>{ \alert<4>{std::}vector<bool> is_prime (100, true);}}
-\uncover<1->{\alert<1>{ for (int i = 2; i < 100; i++)}}
-\uncover<2->{\alert<2>{
-if (is_prime[i])}}
-\uncover<2->{\alert<0>{
-\{}}
-\uncover<3->{\alert<3>{
-\alert<4>{std::}cout << i << " ";}}
-\uncover<3->{\alert<3>{
-for (int j = i; j < 100;}}
-\uncover<3->{\alert<3>{
-is_prime [j] = false, j+=i);}}
-\uncover<2->{\alert<0>{
-\}}}
-\uncover<1->{\alert<0>{ return 0;}}
-\uncover<1->{\alert<0>{\}}}
-\end{semiverbatim}
-\visible<4->{Note the use of \alert{\texttt{std::}}.}
-\end{frame}
-
 \newenvironment{iconblock}[2]{
     \begin{block}{#1}
     \begin{center}
@@ -423,8 +398,7 @@ is_prime [j] = false, j+=i);}}
 
 \subsubsection{面向构件}
 
-\begin{frame}[fragile]
-  \frametitle{面向构件}
+\begin{frame}[fragile]{面向构件}
   \begin{itemize}
     \item 软件间的高层协作
     \item 媒介是通行的接口规范
