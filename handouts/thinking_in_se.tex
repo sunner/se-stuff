@@ -122,7 +122,7 @@
 
 \section{好的软件}
 
-\subsection{什么样的软件是好软件？}
+\subsection[什么是好软件]{什么样的软件是好软件？}
 
 \newenvironment{iconblock}[2]{
     \begin{block}{#1}
@@ -274,9 +274,9 @@
 
 \section{软工核心思想}
 
-\subsection{核心思想之核心}
+\subsection{核心之核心}
 
-\begin{frame}{核心思想之核心}
+\begin{frame}{核心之核心}
   \begin{block}{核心思想的核心的核心}
     \begin{center}
       \Huge 向传统工业致敬
@@ -297,7 +297,7 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{核心思想之核心}
+\begin{frame}{核心之核心}
   \begin{block}{核心思想的核心的核心}
     \begin{center}
       \alt<1,2>{向传统工业致敬}{向传统工业\alert{\sout{致敬}}挑战}
@@ -323,7 +323,7 @@
   \end{block}
 \end{frame}
 
-\subsection{核心思想之管理}
+\subsection{管理}
 
 \begin{frame}{}
   \begin{block}{管理什么？}
@@ -349,7 +349,9 @@
   \end{block}
 \end{frame}
 
-\subsection{核心思想之技术}
+\subsection{技术}
+
+\subsubsection{模块化}
 
 \begin{frame}{模块化}
   \begin{columns}
@@ -357,6 +359,7 @@
       \begin{block}{}
         1972年，David L. Parnas总结了\structure{信息隐藏}，提出软件要\structure{模块化}的思想。
       \end{block}
+      \pause
       \begin{block}{从此，软件就不再是个体户了\dots}
         \begin{itemize}
           \item 分层
@@ -368,7 +371,55 @@
       \end{block}
     \end{column}
     \begin{column}{.5\textwidth}
-      \includegraphics{parnas.jpg}
+      \includegraphics[width=5cm]{parnas.jpg}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsubsection{面向对象}
+
+\begin{frame}{面向对象 (Object-Oriented)}
+  \begin{columns}
+    \begin{column}{.33\textwidth}
+      \begin{block}{2001年图灵奖}
+        \begin{center}
+          \includegraphics[height=4cm]{dahl.jpg}
+
+          Ole-Johan Dahl
+        \end{center}
+      \end{block}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{block}{2001年图灵奖}
+        \begin{center}
+          \includegraphics[height=4cm]{kristen.jpg}
+
+          Kristen Nygaard
+        \end{center}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{面向对象 (Object-Oriented)}
+  \begin{columns}
+    \begin{column}{.33\textwidth}
+      \begin{block}{2003年图灵奖}
+        \begin{center}
+          \includegraphics[height=4cm]{kay.jpg}
+
+          Alan Kay
+        \end{center}
+      \end{block}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{block}{2008年图灵奖}
+        \begin{center}
+          \includegraphics[height=4cm]{liskov.jpg}
+
+          Babara Liskov
+        \end{center}
+      \end{block}
     \end{column}
   \end{columns}
 \end{frame}
@@ -376,25 +427,20 @@
 \begin{frame}{面向对象}
   \begin{columns}
     \begin{column}{.5\textwidth}
-      \begin{block}{}
-        1972年，David L. Parnas总结了\structure{信息隐藏}，提出软件要\structure{模块化}的思想。
-      \end{block}
-      \begin{block}{从此，软件就不再是个体户了\dots}
-        \begin{itemize}
-          \item 分层
-          \item 分块
-          \item 分工
-          \item 模块可复用
-          \item 重新组合模块以适应变化
-        \end{itemize}
-      \end{block}
+      \begin{itemize}
+        \item 一种用计算机程序表示物理世界的哲学
+          \pause
+        \item 模块化、复用、扩展\dots
+          \pause
+        \item 指导软件开发的整个过程
+        \item \dots
+      \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
-      \includegraphics{parnas.jpg}
+      \includegraphics[width=5cm]{dahl_nygaard.jpg}
     \end{column}
   \end{columns}
 \end{frame}
-
 \end{document}
 
 
