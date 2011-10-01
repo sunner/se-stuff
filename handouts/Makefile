@@ -102,16 +102,6 @@ clean	:
 veryclean	: clean
 	  -rm -f *.log *.aux *.dvi *.bbl *.blg *.ilg *.toc *.lof *.lot *.idx *.ind *.ps  *~
 
-# This is a rule to generate a file of prerequisites for a given .tex file
-%.d	: %.tex
-	$(get_dependencies) ; echo $$deps ; \
-	$(getbibs) ; echo $$bibs ; \
-	$(geteps) ; echo $$epses ; \
-	$(manconf) ; echo  $$mandeps  ;\
-	echo "$*.dvi $@ : $< $$deps $$bibs $$epses $$mandeps" > $@ 
-
-include $(SRC:.tex=.d)
-
 # $(DEP) $(EPSPICS) $(BIBFILE)
 $(TRG)	: %.dvi : %.tex
 	  @$(run-latex)
