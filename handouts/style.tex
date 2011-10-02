@@ -1,4 +1,4 @@
-\documentclass[]{beamer}
+\documentclass{beamer}
 
 \mode<presentation>
 {
@@ -12,9 +12,16 @@
 \usepackage{xunicode}
 \usepackage[slantfont,boldfont]{xeCJK}
 \usepackage{ulem}
+\usepackage{tikz}
+\usepackage{verbatim}
 
 \setCJKmainfont{AR PL UKai CN}
+\setCJKmonofont{文泉驿等宽微米黑}
 
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt
 
+\usetikzlibrary{arrows,shapes,backgrounds}
+
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]

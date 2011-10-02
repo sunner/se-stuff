@@ -1,4 +1,5 @@
 \input{style.tex}
+\graphicspath{{./thinking_in_se/}}
 
 \title[Thinking in SE]
 {软件工程思想}
@@ -404,12 +405,161 @@
     \item 媒介是通行的接口规范
     \item 无需深入了解彼此
   \end{itemize}
+  \pause
+  \begin{block}{例如：Unix/Linux的\alert{管道}操作}
+    \begin{semiverbatim}
+    {\color{magenta}# 列出工大英文主页拼写错误的单词}
+    \structure{curl} \alert{"http://en.hit.edu.cn/"} 2>/dev/null {\color{cyan}|}
+    \structure{sed} \alert{'s/[^a-zA-Z ]/ /g'} {\color{cyan}|}
+    \structure{tr} \alert{'A-Z ' 'a-z\\n'} {\color{cyan}|}
+    \structure{grep} \alert{'[a-z]'} {\color{cyan}|}
+    \structure{sort} -u {\color{cyan}|}
+    \structure{comm} -23 - <(\structure{sort} /usr/share/dict/words) {\color{cyan}|}
+    \structure{less}
+    \end{semiverbatim}
+  \end{block}
 \end{frame}
 
-\begin{frame}{面向构件}
+\begin{frame}{面向构件---微软的COM技术}
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \begin{block}{}
+        腾讯QQ浏览器 \tikz[na] \coordinate (s-qq);
+      \end{block}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{block}{}
+        微软Internet Explorer \tikz[na] \coordinate (s-ie);
+      \end{block}
+    \end{column}
+  \end{columns}
   \begin{center}
-    \includegraphics[height=8cm]{qqbrowser.jpg}
+    % Use a background grid to make it easier to find coordinates
+    % When the coordinates have been found, remove the 
+    % 'show background grid' option. 
+    \tikzstyle{background grid}=[draw, black!50,step=.5cm]
+    \begin{tikzpicture}%[show background grid]
+      % Put the graphic inside a node. This makes it easy to place the
+      % graphic and to draw on top of it. 
+      % The above right option is used to place the lower left corner
+      % of the image at the (0,0) coordinate. 
+      \node [inner sep=0pt,above right] 
+      {\includegraphics[width=10cm]{qqbrowser.jpg}};
+      % define destination coordinates
+      \path (4.5, 7.3) coordinate (qq)
+            (5, 4.5) coordinate (ie)
+            (0, 6.85) coordinate (qqzone1)
+            (10, 8) coordinate (qqzone2)
+            (0, 1) coordinate (iezone1)
+            (9.8, 6.8) coordinate (iezone2);
+    \end{tikzpicture}
   \end{center}
+
+  % define overlays
+  % Note the use of the overlay option. This is required when 
+  % you want to access nodes in different pictures.
+  \only<2->{
+    \begin{tikzpicture}[overlay]
+      \path[->,red,ultra thick] (s-qq) edge [bend right] (qq);
+      \draw [dashed, red, ultra thick] (qqzone1) rectangle (qqzone2);
+    \end{tikzpicture}
+  }
+  \only<3>{
+    \begin{tikzpicture}[overlay]
+      \path[->,blue,ultra thick] (s-ie) edge [bend left] (ie);
+      \draw [dashed, blue, ultra thick] (iezone1) rectangle (iezone2);
+    \end{tikzpicture}
+  }
+\end{frame}
+
+\begin{frame}{面向构件---Web上的Mashup}
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \begin{block}{}
+        京东网上商城 \tikz[na] \coordinate (s-360buy);
+      \end{block}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{block}{}
+        百度地图 \tikz[na] \coordinate (s-baidu);
+      \end{block}
+    \end{column}
+  \end{columns}
+  \begin{center}
+    % Use a background grid to make it easier to find coordinates
+    % When the coordinates have been found, remove the 
+    % 'show background grid' option. 
+    \tikzstyle{background grid}=[draw, black!50,step=.5cm]
+    \begin{tikzpicture}%[show background grid]
+      % Put the graphic inside a node. This makes it easy to place the
+      % graphic and to draw on top of it. 
+      % The above right option is used to place the lower left corner
+      % of the image at the (0,0) coordinate. 
+      \node [inner sep=0pt, above right] 
+      {\includegraphics[width=10cm]{360buy.png}};
+      % define destination coordinates
+      \path (4.5, 5.5) coordinate (360buy)
+            (5, 3) coordinate (baidu)
+            (0, 4.35) coordinate (3zone1)
+            (10, 6.6) coordinate (3zone2)
+            (0.25, 0.5) coordinate (bzone1)
+            (9.75, 4.3) coordinate (bzone2);
+    \end{tikzpicture}
+  \end{center}
+
+  % define overlays
+  % Note the use of the overlay option. This is required when 
+  % you want to access nodes in different pictures.
+  \only<2->{
+    \begin{tikzpicture}[overlay]
+      \path[->,red,ultra thick] (s-360buy) edge [bend right] (360buy);
+      \draw [dashed, red, ultra thick] (3zone1) rectangle (3zone2);
+    \end{tikzpicture}
+  }
+  \only<3>{
+    \begin{tikzpicture}[overlay]
+      \path[->,blue,ultra thick] (s-baidu) edge [bend left] (baidu);
+      \draw [dashed, blue, ultra thick] (bzone1) rectangle (bzone2);
+    \end{tikzpicture}
+  }
+\end{frame}
+
+\subsubsection{中间件}
+\begin{frame}{中间件}
+  \begin{alertblock}{问题}
+    构件繁多，各说各话
+  \end{alertblock}
+  \pause
+  \begin{block}{中间件}
+    \begin{itemize}
+      \item 做方言与普通话的翻译
+      \item 使用普通话的构件，便可以与方言沟通
+    \end{itemize}
+  \end{block}
+  \pause
+  \begin{block}{例如}
+    \begin{itemize}
+      \item 短信网关使不同运营商间的短信互通
+      \item 支付宝协调各种支付方式
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{回顾}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \tableofcontents[pausesections]
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{block}{}
+        \begin{center}
+        \large 这都是笼统的\structure{凤毛麟角}\dots
+
+        \huge \alert{请提问，谢谢！}
+        \end{center}
+      \end{block}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \end{document}
